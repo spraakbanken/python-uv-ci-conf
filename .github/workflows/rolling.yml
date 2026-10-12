@@ -19,7 +19,7 @@ concurrency:
 name: rolling
 
 env:
-  UV_VERSION: "0.12.9"
+  UV_VERSION: "0.12.20"
 
 jobs:
   # https://twitter.com/mycoliza/status/1571295690063753218
@@ -30,7 +30,7 @@ jobs:
       max-parallel: 4
       fail-fast: false
       matrix:
-        python-version: ["3.15-dev"]
+        python-version: ["3.16-dev"]
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v5.0.0
         with:
@@ -73,7 +73,7 @@ jobs:
       max-parallel: 4
       fail-fast: false
       matrix:
-        python-version: ["3.14"]
+        python-version: ["3.15"]
     # There's no point running this if no uv.lock was checked in in the first place, since we'd
     # just redo what happened in the regular test job. Unfortunately, hashFiles only works in if on
     # steps, so we repeat it.
